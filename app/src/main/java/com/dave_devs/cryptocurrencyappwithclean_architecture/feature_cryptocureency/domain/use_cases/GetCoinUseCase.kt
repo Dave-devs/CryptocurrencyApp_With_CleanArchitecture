@@ -10,7 +10,7 @@ import okio.IOException
 import retrofit2.HttpException
 import javax.inject.Inject
 
-class GetCoinUseCase (
+class GetCoinUseCase @Inject constructor(
     private val coinRepository: CoinRepository
 ){
     operator fun invoke(coinId: String): Flow<Resource<CoinDetail>> = flow {
