@@ -14,7 +14,6 @@ class GetCoinUseCase @Inject constructor(
     private val coinRepository: CoinRepository
 ){
     operator fun invoke(coinId: String): Flow<Resource<CoinDetail>> = flow {
-
         try {
             emit(Resource.Loading())
             val coin = coinRepository.getCoinById(coinId).toCoinDetail()
@@ -25,7 +24,5 @@ class GetCoinUseCase @Inject constructor(
         } catch (_: IOException) {
             emit(Resource.Error("An unexpected server error has occurred."))
         }
-
     }
-
 }
