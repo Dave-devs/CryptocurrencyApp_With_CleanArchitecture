@@ -1,4 +1,4 @@
-package com.dave_devs.cryptocurrencyappwithclean_architecture.ui.theme
+package com.dave_devs.cryptocurrencyappwithclean_architecture.feature_cryptocureency.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -15,29 +15,64 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorScheme = darkColorScheme(
-    primary = CDPrimary,
-    background = Color.Black,
-    onBackground = CDOnBackground,
-    onPrimary = Color.White
+    primary = Green80,
+    onPrimary = Green20,
+    primaryContainer = Green30,
+    onPrimaryContainer = Green90,
+    inversePrimary = Green40,
+    secondary = DarkGreen80,
+    onSecondary = DarkGreen20,
+    secondaryContainer = DarkGreen30,
+    onSecondaryContainer = DarkGreen90,
+    tertiary = Violet80,
+    onTertiary = Violet20,
+    tertiaryContainer = Violet30,
+    onTertiaryContainer = Violet90,
+    background = Gray10,
+    onBackground = Gray90,
+    surface = GreenGray30,
+    onSurface = GreenGray80,
+    surfaceVariant = GreenGray30,
+    onSurfaceVariant = GreenGray80,
+    inverseSurface = Gray90,
+    inverseOnSurface = Gray10,
+    error = Red80,
+    onError = Red20,
+    errorContainer = Red30,
+    onErrorContainer = Red90,
+    outline = GreenGray80
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = ColorPrimary,
-    background = Color.White,
-    onBackground = MediumGray,
-    onPrimary = Color.White
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
+    primary = Green40,
     onPrimary = Color.White,
+    primaryContainer = Green90,
+    onPrimaryContainer = Green10,
+    inversePrimary = Green80,
+    secondary = DarkGreen40,
     onSecondary = Color.White,
+    secondaryContainer = DarkGreen90,
+    onSecondaryContainer = DarkGreen10,
+    tertiary = Violet40,
     onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    tertiaryContainer = Violet90,
+    onTertiaryContainer = Violet10,
+    background = Gray99,
+    onBackground = Gray10,
+    surface = GreenGray90,
+    onSurface = GreenGray30,
+    surfaceVariant = GreenGray90,
+    onSurfaceVariant = GreenGray30,
+    inverseSurface = Gray20,
+    inverseOnSurface = Gray95,
+    error = Red40,
+    onError = Color.White,
+    errorContainer = Red90,
+    onErrorContainer = Red10,
+    outline = GreenGray50
 )
 
 @Composable
@@ -61,6 +96,13 @@ fun CryptocurrencyAppWithCleanArchitectureTheme(
             (view.context as Activity).window.statusBarColor = colorScheme.primary.toArgb()
             ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = darkTheme
         }
+    }
+
+    val systemUiController = rememberSystemUiController()
+    SideEffect {
+        systemUiController.setSystemBarsColor(
+            color = if (darkTheme) Gray10 else Gray90
+        )
     }
 
     MaterialTheme(

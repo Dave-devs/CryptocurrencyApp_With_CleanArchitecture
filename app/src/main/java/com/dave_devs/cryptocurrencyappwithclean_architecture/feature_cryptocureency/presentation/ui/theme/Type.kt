@@ -1,4 +1,4 @@
-package com.dave_devs.cryptocurrencyappwithclean_architecture.ui.theme
+package com.dave_devs.cryptocurrencyappwithclean_architecture.feature_cryptocureency.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

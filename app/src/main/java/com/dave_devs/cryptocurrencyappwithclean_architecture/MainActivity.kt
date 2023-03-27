@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.dave_devs.cryptocurrencyappwithclean_architecture.feature_cryptocureency.presentation.navigation.Navigation
-import com.dave_devs.cryptocurrencyappwithclean_architecture.ui.theme.CryptocurrencyAppWithCleanArchitectureTheme
+import com.dave_devs.cryptocurrencyappwithclean_architecture.feature_cryptocureency.presentation.ui.theme.CryptocurrencyAppWithCleanArchitectureTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

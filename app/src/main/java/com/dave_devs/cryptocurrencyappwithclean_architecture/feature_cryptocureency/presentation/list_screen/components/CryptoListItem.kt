@@ -5,8 +5,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
@@ -28,25 +30,18 @@ fun CryptoListItem(
             .clickable { onItemClick(coin) },
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Card(modifier = Modifier
-            .fillMaxWidth(),
-            elevation = CardDefaults.cardElevation(),
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.onBackground
-            )
-        ) {
-            Text(
-                text = "${coin.rank}. ${coin.name} (&{coin.symbol})",
-                style = MaterialTheme.typography.bodySmall,
-                overflow = TextOverflow.Ellipsis
-            )
-            Text(
-                text = if (coin.isActive) "active" else "inactive",
-                color = if (coin.isActive) Color.Green else Color.Red,
-                style = MaterialTheme.typography.bodyMedium,
-                fontStyle = FontStyle.Italic,
-                textAlign = TextAlign.End
-            )
-        }
+        Text(
+            text = "${coin.rank}. ${coin.name} (&{coin.symbol})",
+            style = MaterialTheme.typography.bodySmall,
+            overflow = TextOverflow.Ellipsis
+        )
+        Text(
+            text = if (coin.isActive) "active" else "inactive",
+            color = if (coin.isActive) Color.Green else Color.Red,
+            style = MaterialTheme.typography.bodyMedium,
+            fontStyle = FontStyle.Italic,
+            textAlign = TextAlign.End,
+            modifier = Modifier.align(CenterVertically)
+        )
     }
 }
